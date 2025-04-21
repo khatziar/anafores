@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 Update button - event               -> Done
 Delete button - event -> cascade    -> Done
 Delete button - anafora             -> Done
@@ -7,14 +6,4 @@ Validation of insert edit           -> Done
 trim specialcharacters
 Confirmation of delete
 insert/update pdf file
-=======
-Update button - event               -> Done
-Delete button - event -> cascade    -> Done
-Delete button - anafora             -> Done
-Αλλαγή θέσης των κουμπιών           -> Done
-Validation of insert edit           -> Done
-trim specialcharacters
-Confirmation of delete
-insert/update pdf file
->>>>>>> 87166af7471c7de14ce91da385b2353d3a243608
 20/4/2025
