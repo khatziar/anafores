@@ -57,7 +57,12 @@ $counter_event = 0;
                                         echo 'id  = ' . $event->id . '<br>';
                                         echo 'Ημερομηνία  = ' . $event->date . '<br>';
                                         echo 'Τόπος   = ' . $event->place . '<br>';
-                                        echo 'Περιγραφή  = ' . $event->perigrafi;
+                                        echo 'Περιγραφή  = ' . $event->perigrafi. '<br>';
+                                        // Εμφανίζουμε τις Σημειώσεις μόνο αν υπάρχουν
+                                        if ($event->simeioseis != '') {
+                                            echo 'Σημειώσεις  = <br><textarea class="form-control" rows="6" readonly>'.$event->simeioseis.'</textarea>';
+                                        } 
+                                
                                         ?>
                                     </div>
                                     <div class="col align-self-center">
