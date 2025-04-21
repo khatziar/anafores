@@ -23,6 +23,10 @@
                                 <textarea name="perigrafi" class="form-control" rows="6" placeholder="Δώσε περιγραφή γεγονότος..." required></textarea>
                             </div>
                             <div class="mt-3">
+                                <label>Σημειώσεις</label>
+                                <textarea name="simeioseis" class="form-control" rows="6" placeholder="Σημειώσεις γεγονότος..."></textarea>
+                            </div>
+                            <div class="mt-3">
                                 <button type="submit" name="save-event-btn" class="btn btn-primary">Αποθήκευση</button>
                             </div>
                             </div> <!--form-->

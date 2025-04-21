@@ -35,14 +35,16 @@ if (isset($_POST['save-event-btn'])) {
     $date = $_POST['date'];
     $place = $_POST['place'];
     $perigrafi = $_POST['perigrafi'];
+    $simeioseis = $_POST['simeioseis'];
 
     try {
-        $query = "INSERT INTO events(date, place, perigrafi) VALUES (:date, :place, :perigrafi)";
+        $query = "INSERT INTO events(date, place, perigrafi,simeioseis) VALUES (:date, :place, :perigrafi,:simeioseis)";
         $query_run = $pdo->prepare($query);
         $data = [
             ':date' => $date,
             ':place' => $place,
-            ':perigrafi' => $perigrafi
+            ':perigrafi' => $perigrafi,
+            ':simeioseis' => $simeioseis
         ];
         $query_execute = $query_run->execute($data);
 
@@ -66,14 +68,16 @@ if (isset($_POST['update-event-btn'])) {
         $date = $_POST['date'];
         $place = $_POST['place'];
         $perigrafi = $_POST['perigrafi'];
+        $simeioseis = $_POST['simeioseis'];
     
     try {
-        $query = "UPDATE events SET date=:date,place=:place,perigrafi=:perigrafi WHERE id=:ev_id LIMIT 1";
+        $query = "UPDATE events SET date=:date,place=:place,perigrafi=:perigrafi,simeioseis=:simeioseis WHERE id=:ev_id LIMIT 1";
         $query_run = $pdo->prepare($query);
         $data = [
             ':date' => $date,
             ':place' => $place,
             ':perigrafi' => $perigrafi,
+            ':simeioseis' => $simeioseis,
             ':ev_id' => $id
         ];
 
