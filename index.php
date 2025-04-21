@@ -58,7 +58,7 @@ $counter_event = 0;
                                         echo 'Ημερομηνία  = ' . $event->date . '<br>';
                                         echo 'Τόπος   = ' . $event->place . '<br>';
                                         echo 'Περιγραφή  = ' . $event->perigrafi. '<br>';
-                                        // echo 'Σημειώσεις  = ' . $event->simeioseis;
+                                        // Εμφανίζουμε τις Σημειώσεις μόνο αν υπάρχουν
                                         if ($event->simeioseis != '') {
                                             echo 'Σημειώσεις  = <br><textarea class="form-control" rows="6" readonly>'.$event->simeioseis.'</textarea>';
                                         } 

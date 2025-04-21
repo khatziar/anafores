@@ -30,7 +30,7 @@ try {
 
 }
 
-// Το κουμπί αποθήκευσης save-event-btn στην φόρμα Εισαγωγής Γεγονότος
+// Το κουμπί αποθήκευσης save-event-btn στην φόρμα Εισαγωγής Γεγονότος κ με Σημειώσεις
 if (isset($_POST['save-event-btn'])) {
     $date = $_POST['date'];
     $place = $_POST['place'];
