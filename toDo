@@ -3,9 +3,8 @@ Delete button - event -> cascade    -> Done
 Delete button - anafora             -> Done
 Αλλαγή θέσης των κουμπιών           -> Done
 Validation of insert edit           -> Done
-trim specialcharacters
-Confirmation of delete
+Confirmation of delete              -> Done
+trim specialcharacters              -> Done
 insert/update pdf file
-20/4/2025
 
-4/6/2025: να διορθώσω το select στο edit-anafora
+4/6/2025: να διορθώσω το select στο edit-anafora    -> done

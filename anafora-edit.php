@@ -13,51 +13,32 @@ include('config/db.php');
                     <div class="card-body">
                         <?php
                         if (isset($_GET['id'])){
-                              $anafora_id = $_GET['id'];
-
-                              $query = 'SELECT * FROM anafores WHERE id = :anaf_id LIMIT 1';
-                                $stmt = $pdo->prepare($query);
-                                $stmt ->execute(['anaf_id' => $anafora_id]); 
-                                $Anafora = $stmt->fetch(); 
+                            $anafora_id = $_GET['id'];
+                            // Fetch the Anafora details based on the provided ID
+                            $query = 'SELECT * FROM anafores WHERE id = :anaf_id LIMIT 1';
+                            $stmt = $pdo->prepare($query);
+                            $stmt->execute(['anaf_id' => $anafora_id]); 
+                            $Anafora = $stmt->fetch();
                             }
                         
                         ?>
                         <form action="code-anafora.php" method="post" class="needs-validation">
-                            <!-- <input type="hidden" name="event_id" value="<?php echo $Anafora->$event_id?>" -->
                         
-                            <input type="hidden" name="id" value="<?= $Anafora->id?>" >
-                            <!--
-                                <div class="mt-3">
-                                <label>id Αναφοράς</label>
-                                <input type="text" name="id" value="<?= $Anafora->id?>" class="form-control" readonly>
-                                </div>
-                             -->
+                            <input type="hidden" name="id" value="<?= $Anafora->id?>" > 
                             <div class="mt-3">
-                                <!--<label>id Γεγονότος</label>-->
                                     <label>id Γεγονότος</label>
-                                    <select class="form-select" name="event_id" readonly>
-                                        <?php 
-                                            $queryEvents = 'SELECT * FROM events ORDER BY date';
-                                            $stmtEvents = $pdo -> prepare($queryEvents);
-                                            $stmtEvents ->execute();
-                                            $events = $stmtEvents->fetchAll();
-                                            foreach ($events as $event) {
-                                                $option_msg = '<option value='.$event->id;
-                                                if($Anafora->event_id==$event->id) {
-                                                    $option_msg = $option_msg . ' selected';
-                                                    }
-                                                $option_msg = $option_msg . '>'.$event->id.': '.$event->date.': '.$event->perigrafi.'</option>';
-                                                echo $option_msg;
-                                                }
-                                                //echo '<option value='.$event->id.'>'.$event->date.': '.$event->perigrafi.'</option>';
-                                                //echo '<option value='.$event->id.' '.if($Anafora->event_id==$event->id) echo 'selected="selected">'.$event->id.':'.$event->date.':'.$event->perigrafi.'</option>';
-                                        ?>
-                                    </select>
-                                <!--<input type="text" name="event_id" value="<?= $Anafora->event_id?>" class="form-control"> --> <!--placeholder="Δώσε ημερομηνία δημοσίευσης Αναφοράς"-->
+                                    <?php 
+                                    // Fetch event details based on event_id
+                                        $queryEvent = 'SELECT * FROM events WHERE id = :event_id';
+                                        $stmtEvent = $pdo -> prepare($queryEvent);
+                                        $stmtEvent ->execute(['event_id' => $Anafora->event_id]);
+                                        $event = $stmtEvent->fetch();
+                                        echo '<input type="text" name="event_id" value="'.$Anafora->event_id.' '.$event->date.': '.$event->perigrafi.'" class="form-control" style="background-color:lightgrey" readonly>';
+                                    ?>
                             </div>
                             <div class="mt-3">
                                 <label>Ημερομηνία δημοσίευσης</label>
-                                <input type="date" name="dimosieusi" value="<?= $Anafora->dimosieusi?>" class="form-control" required> <!--placeholder="Δώσε ημερομηνία δημοσίευσης Αναφοράς"-->
+                                <input type="date" name="dimosieusi" value="<?= $Anafora->dimosieusi?>" class="form-control" required>
                             </div>
                             <div class="mt-3">
                                 <label>Μέσο</label>

@@ -27,7 +27,7 @@ include('config/db.php');
                             <!--<input type="hidden" name="id" value="<?php echo $Event->$id ?>">-->
                             <div class="mt-3">
                                 <label>id Γεγονότος</label>
-                                <input type="text" name="id" value="<?= $Event->id ?>" class="form-control" readonly>
+                                <input type="text" name="id" value="<?= $Event->id ?>" class="form-control" style="background-color:lightgrey" readonly>
                             </div>
                             <div class="mt-3">
                                 <label>Ημερομηνία</label>

@@ -38,13 +38,12 @@ $counter_event = 0;
                                         <?php echo $counter_event; ?>
                                         </h3>
                                     </div>
-                                    <!--<a href="event-delete.php?event_id=<?php echo $event_id ?>" class="btn btn-danger float-end ">Διαγραφή</a>-->
                                     <div class="col-sm-1">
                                         <a href="event-edit.php?id=<?php echo $event_id ?>" class="btn btn-success float-end ">Επεξεργασία</a>
                                     </div>
                                     <div class="col-sm-1">
                                         <form action="code-event.php" method="POST">
-                                            <button type="submit" name="del-event-btn" value="<?php echo $event->id ?>" class="btn btn-danger float-end">Διαγραφή</button>
+                                            <button type="submit" name="del-event-btn" value="<?php echo $event->id ?>" class="btn btn-danger float-end" onclick="return confirm('Είστε σίγουροι ότι θέλετε να διαγράψετε το Γεγονός;');">Διαγραφή</button>
                                         </form>
                                     </div>
                                 </div>
@@ -112,9 +111,8 @@ $counter_event = 0;
                                                                     <a href="anafora-edit.php?id=<?php echo $anafora->id ?>" class="btn btn-success">Edit</a>
                                                                 </div>
                                                                 <div class="mx-auto m-1"> 
-                                                                    <!-- <a href="code-anafora.php?id=<?php echo $anafora->id ?>" class="btn btn-success">Edit</a> -->
-                                                                     <form action="code-anafora.php" method="POST">
-                                                                        <button type="submit" name="del-anafora-btn" onsubmit="return confirm('Do you really want to delete Anafora?');" value="<?php echo $anafora->id ?>" class="btn btn-danger">Del</button>
+                                                                        <form action="code-anafora.php" method="POST">
+                                                                        <button type="submit" name="del-anafora-btn"   value="<?php echo $anafora->id ?>" class="btn btn-danger" onclick="return confirm('Είστε σίγουροι ότι θέλετε να διαγράψετε την Αναφορά;');">Del</button>
                                                                     </form>
                                                                 </div>
                                                             </div>

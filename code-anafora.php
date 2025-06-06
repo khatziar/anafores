@@ -38,13 +38,17 @@ if (isset($_POST['del-anafora-btn'])){
 // Το κουμπί αποθήκευσης save-anafora-btn στην φόρμα Εισαγωγής Αναφοράς
 if (isset($_POST['save-anafora-btn']) ){ //&& isset($_FILES['pdfFile'])
     $event_id = $_POST['event_id'];   
-    $meso = $_POST['meso'];
+    $meso = trim($_POST['meso']);
+    $meso = htmlspecialchars($meso, ENT_QUOTES, 'UTF-8'); // Προστασία από XSS
     $dimosieusi = $_POST['dimosieusi'];    
     echo 'date='.$dimosieusi;
     echo '<br>';
-    $title = $_POST['title'];
-    $link = $_POST['link'];
-    $llink = $_POST['llink'];
+    $title = trim($_POST['title']);
+    $title = htmlspecialchars($title, ENT_QUOTES, 'UTF-8'); // Προστασία από XSS
+    $link = trim($_POST['link']);
+    $link = htmlspecialchars($link, ENT_QUOTES, 'UTF-8'); // Προστασία από XSS
+    $llink = trim($_POST['llink']);
+    $llink = htmlspecialchars($llink, ENT_QUOTES, 'UTF-8'); // Προστασία από XSS
     
     //εδω code για το pdf αρχειο
     // $uploaddir = 'C:\\drasi\\anafores\\';
@@ -122,11 +126,15 @@ if (isset($_POST['update-anafora-btn'])){
     $id = $_POST['id'];   
     $event_id = $_POST['event_id'];   
     echo $event_id;
-    $meso = $_POST['meso'];
+    $meso = trim($_POST['meso']); // Προστασία από XSS
+    $meso = htmlspecialchars($meso, ENT_QUOTES, 'UTF-8'); // Προστασία από XSS
     $dimosieusi = $_POST['dimosieusi'];    
-    $title = $_POST['title'];
-    $link = $_POST['link'];
-    $llink = $_POST['llink'];
+    $title = trim($_POST['title']);
+    $title = htmlspecialchars($title, ENT_QUOTES, 'UTF-8'); // Προστασία από XSS
+    $link = trim($_POST['link']);
+    $link = htmlspecialchars($link, ENT_QUOTES, 'UTF-8'); // Προστασία από XSS
+    $llink = trim($_POST['llink']);
+    $llink = htmlspecialchars($llink, ENT_QUOTES, 'UTF-8'); // Προστασία από XSS
     //εδω code για το pdf αρχειο
     
     try {
