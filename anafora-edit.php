@@ -35,7 +35,7 @@ include('config/db.php');
                             <div class="mt-3">
                                 <!--<label>id Γεγονότος</label>-->
                                     <label>id Γεγονότος</label>
-                                    <select class="form-select" name="event_id">
+                                    <select class="form-select" name="event_id" readonly>
                                         <?php 
                                             $queryEvents = 'SELECT * FROM events ORDER BY date';
                                             $stmtEvents = $pdo -> prepare($queryEvents);
